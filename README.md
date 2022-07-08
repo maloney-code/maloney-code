@@ -31,6 +31,20 @@ Below are our core plugins:
 
 There are also many [community plugins](https://nx.dev/community) you could add.
 
+## create workspace and first project
+``` bash
+  #install nx globally
+  yarn add -g nx
+
+  #create a workspace
+  npx create-nx-workspace@latest
+  yarn nx generate @nrwl/next:application sandbox --no-interactive --dry-run
+
+  # add tailwind support
+  yarn add -D tailwindcss@latest postcss@latest autoprefixer@latest
+```
+
+
 ## Generate an application
 
 Run `nx g @nrwl/react:app my-app` to generate an application.
