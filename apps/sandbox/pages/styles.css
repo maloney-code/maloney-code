@@ -5,14 +5,13 @@
 /* https://tailwindcss.com/docs/font-family#customizing-the-default-font */
 @layer base {
   html {
-
     font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
       Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif,
       Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
   }
 
-  h1 {
-    @apply text-3xl py-3 px-2 font-semibold border-b-2 border-gray-600
+   h1 {
+    @apply text-3xl py-3 px-2 font-semibold border-b-2 border-gray-6
    }
 
 }
