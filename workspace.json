@@ -4,6 +4,7 @@
   "projects": {
     "sandbox": "apps/sandbox",
     "sandbox-e2e": "apps/sandbox-e2e",
+    "shared-next-ui": "libs/shared/next-ui",
     "shared-ui": "libs/shared/ui"
   }
 }
