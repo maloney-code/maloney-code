@@ -2,6 +2,7 @@
   "$schema": "./node_modules/nx/schemas/workspace-schema.json",
   "version": 2,
   "projects": {
+    "api": "apps/api",
     "sandbox": "apps/sandbox",
     "sandbox-e2e": "apps/sandbox-e2e",
     "shared-hooks": "libs/shared/hooks",

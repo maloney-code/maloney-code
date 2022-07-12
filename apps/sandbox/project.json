@@ -21,7 +21,8 @@
       "defaultConfiguration": "development",
       "options": {
         "buildTarget": "sandbox:build",
-        "dev": true
+        "dev": true,
+        "proxyConfig": "apps/sandbox/proxy.conf.json"
       },
       "configurations": {
         "development": {
