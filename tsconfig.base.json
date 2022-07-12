@@ -15,6 +15,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@rm/hooks": ["libs/shared/hooks/src/index.ts"],
       "@rm/nextUI": ["libs/shared/next-ui/src/index.ts"],
       "@rm/ui": ["libs/shared/ui/src/index.ts"]
     }
