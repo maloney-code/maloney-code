@@ -1,0 +1,104 @@
+scalar Date
+
+enum EUserRole {
+  USER
+  ADMIN
+}
+
+enum EPronouns {
+  HE
+  SHE
+  THEY
+}
+
+interface Node {
+  id: ID!
+}
+
+union SearchResult = User | Contact | ContactGroup
+
+type User implements Node {
+  id: ID!
+  username: String!
+  email: String!
+  phone: String!
+  firstName: String!
+  lastName: String!
+  roles: [EUserRole!]
+}
+
+
+type Contact implements Node {
+  id: ID!
+  firstName: String!
+  lastName: String!
+  email: String
+  phone: String
+  dob: Date!
+  pronouns: [EPronouns!]
+}
+
+type ContactDirectory implements Node {
+  id: ID!
+  createdAt: Date!
+  updatedAt: Date!
+  owners: [User]
+  accessRoles: [EUserRole!]
+  contacts: [Contact!]
+}
+
+type ContactGroup implements Node {
+  id: ID!
+  owners: [String!]
+  name: String!
+  contacts: [Contact!]
+}
+
+input AddUserInput {
+  id: ID
+  username: String!
+  email: String!
+  phone: String!
+  firstName: String!
+  lastName: String!
+  roles: [EUserRole!]
+}
+
+type Query {
+  me: User!
+  user(id: ID!): User
+  allUsers: [User]
+  allContacts: [Contact]
+  search(term: String!): [SearchResult!]!
+}
+
+interface MutationResponse {
+  code: String!
+  success: Boolean!
+  message: String!
+}
+
+type CreateUserResponseType implements MutationResponse {
+  code: String!
+  success: Boolean!
+  message: String!
+  user: User
+}
+
+type UpdateUserResponseType implements MutationResponse {
+  code: String!
+  success: Boolean!
+  message: String!
+  user: User
+}
+
+type Mutation {
+  updateUserEmail(id: ID!, email: String!): UpdateUserResponseType
+  addUser2(user: AddUserInput!): CreateUserResponseType
+  addUser(id:String, username: String!, email: String!, phone: String!, firstName: String!, lastName: String!) : User
+}
+
+schema {
+  query: Query
+  mutation: Mutation
+}

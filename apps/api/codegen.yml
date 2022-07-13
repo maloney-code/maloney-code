@@ -1,0 +1,10 @@
+documents: ./src/**/*.graphql
+schema: http://localhost:3000/graphql
+
+generates:
+  data-access-react.tsx:
+    plugins:
+      - typescript
+      - typescript-operations
+      - typescript-react-apollo
+      - typescript-resolvers

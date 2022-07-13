@@ -1,7 +1,8 @@
 {
   "extends": "../../tsconfig.base.json",
   "files": [],
-  "include": [],
+  "include": ["**/*.ts", "**/*.tsx"],
+  "exclude": ["jest.config.ts", "**/*.test.ts", "**/*.spec.ts", "**/*.d.ts", "**/*.spec.tsx"],
   "references": [
     {
       "path": "./tsconfig.app.json"
